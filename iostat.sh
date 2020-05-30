@@ -24,6 +24,7 @@ do
       sleep 1
       echo 'end------' >> $filepath
     fi
+    sleep 0.1
   elif [[ $str =~ ^D ]]; then
     echo "profiling DONE  --- Shutting DOWN"
     cat ${filepath} >> $logpath

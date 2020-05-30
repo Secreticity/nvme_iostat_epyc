@@ -50,13 +50,13 @@ do
     do
       sleep 0.1
       echo '' >> $filepath
-#      insmod $path
+      insmod $path
       echo 'Processors:'${proc}',Block Size:'${b_size}',iter:'${iter}
       echo 'Processors:'${proc}',Block Size:'${b_size}',iter:'${iter} >> ${filepath}
       sleep 0.1
       mpirun -np ${proc} ior -w -t 1m -b ${b_size} -F -o /mnt/pm963/testfile | grep 'Max Write' >> ${filepath}
-#      rmmod mymodule 
-#      dmesg | grep 'add_pagevec' | tail -1 | cut -d_ -f2 >> $filepath
+      rmmod mymodule 
+      dmesg | grep 'add_pagevec' | tail -1 | cut -d_ -f2 >> $filepath
       sh /home/kau/jwbang/drop-cache.sh
       sleep 4s
     done
