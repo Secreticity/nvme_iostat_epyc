@@ -20342,3 +20342,151 @@ pagevec:7472280340 571851
 Processors:96,Block Size:340m,iter:3
 Max Write: 62866.57 MiB/sec (65920.38 MB/sec)
 pagevec:7460922235 572174
+Saved File will be recorded as : /home/kau/jwbang/200320/out_orgepyc.txt
+Read/Write: WRITE
+mymodule path: /home/kau/jwbang/linux-5.2.8_org/mymodule/mymodule.ko
+out_orgepyc
+
+Processors:12,Block Size:340m,iter:1
+Max Write: 24734.78 MiB/sec (25936.30 MB/sec)
+
+Processors:12,Block Size:340m,iter:2
+Max Write: 28037.76 MiB/sec (29399.72 MB/sec)
+
+Processors:12,Block Size:340m,iter:3
+Max Write: 28280.09 MiB/sec (29653.82 MB/sec)
+
+Processors:12,Block Size:680m,iter:1
+Max Write: 28975.41 MiB/sec (30382.92 MB/sec)
+
+Processors:12,Block Size:680m,iter:2
+Max Write: 29209.19 MiB/sec (30628.06 MB/sec)
+
+Processors:12,Block Size:680m,iter:3
+Max Write: 29375.99 MiB/sec (30802.95 MB/sec)
+
+Processors:12,Block Size:1360m,iter:1
+Max Write: 29356.32 MiB/sec (30782.33 MB/sec)
+
+Processors:12,Block Size:1360m,iter:2
+Max Write: 29335.01 MiB/sec (30759.99 MB/sec)
+
+Processors:12,Block Size:1360m,iter:3
+Max Write: 28558.94 MiB/sec (29946.22 MB/sec)
+
+Processors:12,Block Size:2720m,iter:1
+Max Write: 28647.41 MiB/sec (30038.99 MB/sec)
+
+Processors:12,Block Size:2720m,iter:2
+Max Write: 28758.97 MiB/sec (30155.97 MB/sec)
+
+Processors:12,Block Size:2720m,iter:3
+Max Write: 28553.43 MiB/sec (29940.44 MB/sec)
+
+Processors:24,Block Size:170m,iter:1
+Max Write: 48429.64 MiB/sec (50782.16 MB/sec)
+
+Processors:24,Block Size:170m,iter:2
+Max Write: 46342.51 MiB/sec (48593.65 MB/sec)
+
+Processors:24,Block Size:170m,iter:3
+Max Write: 39598.94 MiB/sec (41522.50 MB/sec)
+
+Processors:24,Block Size:340m,iter:1
+Max Write: 44938.62 MiB/sec (47121.56 MB/sec)
+
+Processors:24,Block Size:340m,iter:2
+Max Write: 44356.44 MiB/sec (46511.10 MB/sec)
+
+Processors:24,Block Size:340m,iter:3
+Max Write: 44249.89 MiB/sec (46399.37 MB/sec)
+
+Processors:24,Block Size:680m,iter:1
+Max Write: 49573.25 MiB/sec (51981.32 MB/sec)
+
+Processors:24,Block Size:680m,iter:2
+Max Write: 46881.87 MiB/sec (49159.20 MB/sec)
+
+Processors:24,Block Size:680m,iter:3
+Max Write: 47759.65 MiB/sec (50079.62 MB/sec)
+
+Processors:24,Block Size:1360m,iter:1
+Max Write: 47290.24 MiB/sec (49587.41 MB/sec)
+
+Processors:24,Block Size:1360m,iter:2
+Max Write: 47438.43 MiB/sec (49742.80 MB/sec)
+
+Processors:24,Block Size:1360m,iter:3
+Max Write: 47680.69 MiB/sec (49996.83 MB/sec)
+
+Processors:48,Block Size:85m,iter:1
+Max Write: 49897.83 MiB/sec (52321.67 MB/sec)
+
+Processors:48,Block Size:85m,iter:2
+Max Write: 52883.27 MiB/sec (55452.12 MB/sec)
+
+Processors:48,Block Size:85m,iter:3
+Max Write: 51150.81 MiB/sec (53635.52 MB/sec)
+
+Processors:48,Block Size:170m,iter:1
+Max Write: 67756.54 MiB/sec (71047.88 MB/sec)
+
+Processors:48,Block Size:170m,iter:2
+Max Write: 59152.30 MiB/sec (62025.68 MB/sec)
+
+Processors:48,Block Size:170m,iter:3
+Max Write: 68755.08 MiB/sec (72094.92 MB/sec)
+
+Processors:48,Block Size:340m,iter:1
+Max Write: 69727.47 MiB/sec (73114.55 MB/sec)
+
+Processors:48,Block Size:340m,iter:2
+Max Write: 69609.13 MiB/sec (72990.46 MB/sec)
+
+Processors:48,Block Size:340m,iter:3
+Max Write: 69839.09 MiB/sec (73231.60 MB/sec)
+
+Processors:48,Block Size:680m,iter:1
+Max Write: 68596.95 MiB/sec (71929.11 MB/sec)
+
+Processors:48,Block Size:680m,iter:2
+Max Write: 68091.62 MiB/sec (71399.24 MB/sec)
+
+Processors:48,Block Size:680m,iter:3
+Max Write: 69819.68 MiB/sec (73211.24 MB/sec)
+
+Processors:96,Block Size:43m,iter:1
+Max Write: 66850.27 MiB/sec (70097.59 MB/sec)
+
+Processors:96,Block Size:43m,iter:2
+Max Write: 67624.43 MiB/sec (70909.36 MB/sec)
+
+Processors:96,Block Size:43m,iter:3
+Max Write: 69031.58 MiB/sec (72384.86 MB/sec)
+
+Processors:96,Block Size:85m,iter:1
+Max Write: 72255.89 MiB/sec (75765.79 MB/sec)
+
+Processors:96,Block Size:85m,iter:2
+Max Write: 72996.54 MiB/sec (76542.42 MB/sec)
+
+Processors:96,Block Size:85m,iter:3
+Max Write: 72454.75 MiB/sec (75974.31 MB/sec)
+
+Processors:96,Block Size:170m,iter:1
+Max Write: 75119.80 MiB/sec (78768.82 MB/sec)
+
+Processors:96,Block Size:170m,iter:2
+Max Write: 75058.93 MiB/sec (78704.99 MB/sec)
+
+Processors:96,Block Size:170m,iter:3
+Max Write: 75537.02 MiB/sec (79206.30 MB/sec)
+
+Processors:96,Block Size:340m,iter:1
+Max Write: 66399.50 MiB/sec (69624.92 MB/sec)
+
+Processors:96,Block Size:340m,iter:2
+Max Write: 66526.33 MiB/sec (69757.92 MB/sec)
+
+Processors:96,Block Size:340m,iter:3
+Max Write: 63743.28 MiB/sec (66839.67 MB/sec)

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#out_mod16epyc
+#out_orgepyc
 
 #echo `/bin/syscfg/syscfg /d biossettings "Memory Mode" | grep "Current" | cut -d: -f2`
 #echo `/bin/syscfg/syscfg /d biossettings "Cluster Mode" | grep "Current" | cut -d: -f2`
@@ -10,7 +10,7 @@ mount /dev/nvme0n1 /mnt/pm963
 echo "iostat.sh running..."
 sleep 0.5
 
-#sar 1 -o /home/kau/jwbang/200320/data >> /home/kau/jwbang/200320/out_mod16epyc_iostat.txt 2>&1 &
+#sar 1 -o /home/kau/jwbang/200320/data >> /home/kau/jwbang/200320/out_orgepyc_iostat.txt 2>&1 &
 echo "sar (iostat) running..."
 sleep 0.5
 

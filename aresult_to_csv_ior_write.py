@@ -4,11 +4,11 @@ import pandas as pd
 #---------------- Save Settings ------------------
 
 # File name to save DataFrame into csv
-save_name = "out_mod16epyc_ior_w"
+save_name = "out_orgepyc_ior_w"
 #save_name = "org_npb"
 
 # File name of the iostat/throughput result
-out_file = "out_mod16epyc"
+out_file = "out_orgepyc"
 #-------------------------------------------------
 '''
 state = "INIT"
@@ -102,7 +102,7 @@ iostat_df = pd.concat([iostat_df,temp_df],axis=1)
 '''
 #-------------------------------- iostat reader DONE ----------
 
-index = ['throughput', 'latency(x1M)', 'm_count']
+index = ['throughput'] #, 'latency(x1M)', 'm_count']
 p_speed = 0.0
 p_latency = 0
 p_count = 0
@@ -159,7 +159,8 @@ for line in lines:
         else:
             tmpdumpt = listname.pop(0)
             if (header != line.split("iter")[0]):
-                temp_df = pd.DataFrame({column_n:[round(p_speed/3,2),round(p_latency/3000000,2),round(p_count/3,2)]},index=index)
+		#temp_df = pd.DataFrame({column_n:[round(p_speed/3,2),round(p_latency/3000000,2),round(p_count/3,2)]},index=index)
+                temp_df = pd.DataFrame({column_n:[round(p_speed/3,2)]},index=index)
                 data_df = pd.concat([data_df,temp_df],axis=1)
                 p_speed = 0.0
                 p_latency = 0
@@ -179,7 +180,8 @@ for line in lines:
 
 f.close()
 
-temp_df = pd.DataFrame({column_n:[round(p_speed/3,2),round(p_latency/3000000,2),round(p_count/3,2)]},index=index)
+#temp_df = pd.DataFrame({column_n:[round(p_speed/3,2),round(p_latency/3000000,2),round(p_count/3,2)]},index=index)
+temp_df = pd.DataFrame({column_n:[round(p_speed/3,2)]},index=index)
 data_df = pd.concat([data_df,temp_df],axis=1)
 
 #-------------------------------- Throughput & Latency DONE ---------
