@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #------------ SETTING VARIABLES
-filepath='/home/kau/jwbang/200320/out_orgepyc.txt'
+filepath='/home/kau/jwbang/200320/out_mod8epyc2.txt'
 
-annot="out_orgepyc"
+annot="out_mod8epyc2"
 #path="/home/kau/jwbang/linux-5.2.8_org/mymodule/mymodule.ko"
 
 path="/home/kau/jwbang/linux-5.2.8_final/mymodule/mymodule.ko"

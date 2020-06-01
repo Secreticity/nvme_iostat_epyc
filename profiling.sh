@@ -1,13 +1,13 @@
 #!/bin/bash
 
 #------------ SETTING VARIABLES
-filepath='/home/kau/jwbang/200320/out_orgepyc.txt'
+filepath='/home/kau/jwbang/200320/out_mod8epyc2.txt'
 
-annot="out_orgepyc"
-path="/home/kau/jwbang/linux-5.2.8_org/mymodule/mymodule.ko"
+annot="out_mod8epyc2"
+#path="/home/kau/jwbang/linux-5.2.8_org/mymodule/mymodule.ko"
 
 #annot="MODIFIED2"
-#path="/home/kau/jwbang/linux-5.2.8_final/mymodule/mymodule.ko"
+path="/home/kau/jwbang/linux-5.2.8_final/mymodule/mymodule.ko"
 
 logpath='/home/kau/jwbang/200320/log_folder/log'
 #------------------------------
@@ -17,7 +17,7 @@ echo "Read/Write: WRITE"
 echo "mymodule path: "$path
 echo "Saved File will be recorded as : "$filepath >> $logpath
 echo "Read/Write: WRITE" >> $logpath
-echo "mymodule path: "$path >> $logpath
+#echo "mymodule path: "$path >> $logpath
 
 #----- mount and unmount pm963
 #sh /home/kau/jwbang/mkfs.sh xfs >> $logpath
@@ -30,7 +30,7 @@ echo ${annot} > ${filepath}
 sleep 0.1
 
 # ORIGINAL
-for proc in 12 24 48 96
+for proc in 12 24 48 96 192
 do
   case $proc in
 #    8) size_order="512m 1g 2g 4g";;
@@ -39,14 +39,19 @@ do
 #    64) size_order="64m 128m 256m 512m";;
 #    128) size_order="32m 64m 128m 256m";;
 #    256) size_order="16m 32m 64m 128m";;
-    12) size_order="340m 680m 1360m 2720m";;
-    24) size_order="170m 340m 680m 1360m";;
-    48) size_order="85m 170m 340m 680m";;
-    96) size_order="43m 85m 170m 340m";;
+#    12) size_order="340m 680m 1360m 2720m";;
+#    24) size_order="170m 340m 680m 1360m";;
+#    48) size_order="85m 170m 340m 680m";;
+#    96) size_order="43m 85m 170m 340m";;
+    12) size_order="512m 1g 2g 4g 8g";;
+    24) size_order="256m 512m 1g 2g 4g";;
+    48) size_order="128m 256m 512m 1g 2g";;
+    96) size_order="64m 128m 256m 512m 1g";;
+    192) size_order="32m 64m 128m 256m 512m";;
   esac
   for b_size in $size_order
   do
-    for iter in {1..3}
+    for iter in {1..7}
     do
       sleep 0.1
       echo '' >> $filepath

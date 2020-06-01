@@ -4,11 +4,11 @@ import pandas as pd
 #---------------- Save Settings ------------------
 
 # File name to save DataFrame into csv
-save_name = "out_orgepyc_ior_w"
+save_name = "out_mod8epyc2_ior_w"
 #save_name = "org_npb"
 
 # File name of the iostat/throughput result
-out_file = "out_orgepyc"
+out_file = "out_mod8epyc2"
 #-------------------------------------------------
 '''
 state = "INIT"
@@ -102,8 +102,14 @@ iostat_df = pd.concat([iostat_df,temp_df],axis=1)
 '''
 #-------------------------------- iostat reader DONE ----------
 
-index = ['throughput'] #, 'latency(x1M)', 'm_count']
-p_speed = 0.0
+index = ['iter1','iter2','iter3','iter4','iter5','iter6','iter7']
+p_speed1 = 0.0
+p_speed2 = 0.0
+p_speed3 = 0.0
+p_speed4 = 0.0
+p_speed5 = 0.0
+p_speed6 = 0.0
+p_speed7 = 0.0
 p_latency = 0
 p_count = 0
 header = ""
@@ -115,7 +121,19 @@ linecount = 0
 listname = []
 
 
-for i in [12,24,48,96]:
+for i in [12,24,48,96,192]:
+    if i==12:
+        size_order=['512m','1g','2g','4g','8g']
+    elif i==24:
+        size_order=['256m','512m','1g','2g','4g']
+    elif i==48:
+        size_order=['128m','256m','512m','1g','2g']
+    elif i==96:
+        size_order=['64m','128m','256m','512m','1g']
+    elif i==192:
+        size_order=['32m','64m','128m','256m','512m']
+
+    '''
     if i==8:
         size_order=['512m','1g','2g','4g']
     elif i==16:
@@ -136,12 +154,12 @@ for i in [12,24,48,96]:
         size_order=['85m','170m','340m','680m']
     elif i==96:
         size_order=['43m','85m','170m','340m']
+    '''
 
-
-#    size_order=['64m','128m','256m','512m','1024m']
+    #    size_order=['64m','128m','256m','512m','1024m']
 
     for j in size_order:
-        for k in range(1,4):
+        for k in range(1,8):
             listname.append(str(i)+"t_"+str(j))
 """
 for i in [9,16,36,64]:
@@ -160,28 +178,49 @@ for line in lines:
             tmpdumpt = listname.pop(0)
             if (header != line.split("iter")[0]):
 		#temp_df = pd.DataFrame({column_n:[round(p_speed/3,2),round(p_latency/3000000,2),round(p_count/3,2)]},index=index)
-                temp_df = pd.DataFrame({column_n:[round(p_speed/3,2)]},index=index)
+                temp_df = pd.DataFrame({column_n:[p_speed1,p_speed2,p_speed3,p_speed4,p_speed5,p_speed6,p_speed7]},index=index)
                 data_df = pd.concat([data_df,temp_df],axis=1)
-                p_speed = 0.0
-                p_latency = 0
-                p_count = 0
+                p_speed1 = 0.0
+                p_speed2 = 0.0
+                p_speed3 = 0.0
+                p_speed4 = 0.0
+                p_speed5 = 0.0
+                p_speed6 = 0.0
+                p_speed7 = 0.0
+#                p_latency = 0
+#                p_count = 0
                 linecount = 0
                 header = line.split("iter")[0]
                 column_n = tmpdumpt
     elif (line.find("Max") != -1):
         linecount += 1
-        p_speed += float(line.split()[2])
-    elif (line.find("data") != -1):
-        linecount += 1
-        p_speed += float(line.split()[5])
-    elif (line.find("pagevec") != -1):
-        p_latency += int(line.split(":")[1].split()[0])
-        p_count += int(line.split(":")[1].split()[1])
+        if (linecount == 1):
+	    p_speed1 = float(line.split()[2])
+        elif (linecount == 2):
+	    p_speed2 = float(line.split()[2])
+        elif (linecount == 3):
+	    p_speed3 = float(line.split()[2])
+        elif (linecount == 4):
+	    p_speed4 = float(line.split()[2])
+        elif (linecount == 5):
+	    p_speed5 = float(line.split()[2])
+        elif (linecount == 6):
+	    p_speed6 = float(line.split()[2])
+        elif (linecount == 7):
+	    p_speed7 = float(line.split()[2])
+#	p_speed += float(line.split()[2])
+#    elif (line.find("data") != -1):
+#        linecount += 1
+#        p_speed += float(line.split()[5])
+#    elif (line.find("pagevec") != -1):
+#        p_latency += int(line.split(":")[1].split()[0])
+#        p_count += int(line.split(":")[1].split()[1])
 
 f.close()
 
+temp_df = pd.DataFrame({column_n:[p_speed1,p_speed2,p_speed3,p_speed4,p_speed5,p_speed6,p_speed7]},index=index)
 #temp_df = pd.DataFrame({column_n:[round(p_speed/3,2),round(p_latency/3000000,2),round(p_count/3,2)]},index=index)
-temp_df = pd.DataFrame({column_n:[round(p_speed/3,2)]},index=index)
+#temp_df = pd.DataFrame({column_n:[round(p_speed/3,2)]},index=index)
 data_df = pd.concat([data_df,temp_df],axis=1)
 
 #-------------------------------- Throughput & Latency DONE ---------
